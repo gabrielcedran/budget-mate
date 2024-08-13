@@ -18,4 +18,39 @@ Once the dependency is added, the following can be done:
 3. wrap the the app root component with the ThemeProvider (App.tsx)
 
 
+### Accessibility
+
+When developing application, especially web applications, it's important to take especial care with accessibility (where users use screen reader to use your application).
+
+Many times, when rendering modals, popovers, tooltips, etc, it doesn't mean anything to the screen reader, unless it's clearly specified.
+
+It's possible to create accessible UIs only following the ARIA (Accessible Rich Internet Application) semantics (which tends to be hard) or use libs that deliver accessible components (widely tested by the communities).
+
+Example of libs are:
+
+- Ariakit
+- Headless UI (built by the Tailwind devs)
+- Chakra UI (the downside is that it brings Chakra UI default styles)
+- Radix-ui (non intrusive styles, only the guaranteed accessible components. It also allows for granular import, only bringing the components that will be used by the application, instead of the whole lib)
+
+`npm i @radix-ui/react-dialog`
+
+The Radix-ui Dialog.Trigger is a button. When working with styled-components that are 2 options:
+
+```javascript
+
+// 1. create a trigger button as a styled component:
+import * as Dialog from '@radix-ui/react-dialog'
+
+export const Button = styled(Dialog.Trigger)`...`
+
+// 2. provide a styled button as a child of Dialog.Trigger (notice the asChild property):
+
+<Dialog.Trigger asChild>
+    <StyledButton>New Transaction</StyledButton>
+</Dialog.Trigger>
+```
+
+The `Dialog.Portal` is actually a react Portal.
+
 
