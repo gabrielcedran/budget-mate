@@ -1,0 +1,20 @@
+{
+    "transactions": [
+        {
+            "id": 1,
+            "description": "website development",
+            "type": "income",
+            "category": "freelance",
+            "price": 9099,
+            "createdAt": "2024-07-12T15:00:01Z"
+        },
+        {
+            "id": 2,
+            "description": "dinner",
+            "type": "outgoing",
+            "category": "food",
+            "price": 50.33,
+            "createdAt": "2024-07-11T11:59:01Z"
+        }
+    ]
+}

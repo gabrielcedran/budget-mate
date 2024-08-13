@@ -54,3 +54,13 @@ export const Button = styled(Dialog.Trigger)`...`
 The `Dialog.Portal` is actually a react Portal.
 
 
+### Json Server
+
+Json Server is a powerful mock server mostly used by FE developers to mock apis.
+
+`npm i json-server -D`
+
+To execute the json server, run the command `npx json-server {config_file.json}`. The config file json has to be according to json-server documentation.
+
+
+
