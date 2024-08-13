@@ -9,7 +9,9 @@ export function Summary() {
                     <span>Incomings</span>
                     <ArrowCircleUp size={32} color="#00b37e"/>
                 </header>
-                <strong>£ 3,000.00</strong>
+                <strong>
+                    £ 3,000.00
+                </strong>
             </SummaryCard>
 
             <SummaryCard>
@@ -17,7 +19,9 @@ export function Summary() {
                     <span>Outgoings</span>
                     <ArrowCircleDown size={32} color="#f75a68" /> 
                 </header>
-                <strong>£ 3,000.00</strong>
+                <strong>
+                    £ 3,000.00
+                </strong>
             </SummaryCard>
 
             <SummaryCard variant="green">
