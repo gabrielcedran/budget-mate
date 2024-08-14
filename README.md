@@ -78,3 +78,11 @@ To work with uncontrolled components and form validation react has a myriad of p
 - React hook form - for uncontrolled forms 
 - zod - for form validation and schema definition
 - @hookform/resolvers - to integrate react hook from and zod
+
+
+#### Non standard html components
+
+When creating components that differ from the native html components behaviour (like input texts, textareas, checkboxes), it's necessary to integrate these custom components with react hook form via a control api, so that it knows how to handle them and fetch their values.
+
+Implementation reference on NewTransactionModal/index.tsx#line-44 or commit if this change.
+
