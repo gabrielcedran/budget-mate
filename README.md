@@ -86,3 +86,13 @@ When creating components that differ from the native html components behaviour (
 
 Implementation reference on NewTransactionModal/index.tsx#line-44 or commit if this change.
 
+
+### ESLint / Style Guide and Formatting
+
+Careful with the new eslint 9.x as it does not support the traditional shareable configs out of the box anymore.
+
+`npm i -D eslint @rocketseat/eslint-config@3.0.12`
+
+Create a `eslint.config.mjs` with the expected content - see content in the file itself.
+
+To run the eslint: `npm eslint`. To fix all the issues `npm eslint --fix`
