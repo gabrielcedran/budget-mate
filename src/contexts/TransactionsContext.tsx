@@ -10,10 +10,18 @@ export interface Transaction {
     createdAt: Date
 }
 
+export interface CreateTransaction {
+    description: string
+    type: 'income' | 'outgoing'
+    price: number
+    category: string
+}
+
 
 interface TransactionContextType {
     transactions: Transaction[]
     fetchTransactions: (query?: string) => Promise<void>
+    createTransaction: (data: CreateTransaction) => Promise<void>
 }
 
 export const TransactionContext = createContext<TransactionContextType>({} as TransactionContextType)
@@ -25,11 +33,25 @@ export function TransactionsProvider({children}: PropsWithChildren) {
 
         const response = await api.get('/transactions', {
             params: {
+                _sort: 'createdAt',
+                _order: 'desc',
                 q: query
             }
         })
         const data = response.data
         setTransactions([...data.map(transaction => ({...transaction, createdAt: new Date(transaction.createdAt)}))])
+    }
+
+    async function createTransaction(data: CreateTransaction) {
+        await new Promise((resolve) => setTimeout(resolve, 500))
+
+        const {description, category, price, type} = data;
+        
+        const response = await api.post<Transaction>('/transactions', {
+            description, category, price, type, createdAt: new Date()
+        })
+
+        setTransactions(state => [{...response.data, createdAt: new Date(response.data.createdAt)}, ...state])
     }
 
     useEffect(() => {
@@ -44,7 +66,7 @@ export function TransactionsProvider({children}: PropsWithChildren) {
     }, [])
 
     return (
-        <TransactionContext.Provider value={{transactions, fetchTransactions}}>
+        <TransactionContext.Provider value={{transactions, fetchTransactions, createTransaction}}>
             {children}
         </TransactionContext.Provider>
     )

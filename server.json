@@ -1,28 +1,76 @@
 {
-    "transactions": [
-        {
-            "id": 1,
-            "description": "website development",
-            "type": "income",
-            "category": "freelance",
-            "price": 9099.07,
-            "createdAt": "2024-07-12T15:00:01Z"
-        },
-        {
-            "id": 2,
-            "description": "dinner",
-            "type": "outgoing",
-            "category": "food",
-            "price": 50.33,
-            "createdAt": "2024-07-11T11:59:01Z"
-        },        
-        {
-            "id": 3,
-            "description": "salary",
-            "type": "income",
-            "category": "freelance",
-            "price": 1099.91,
-            "createdAt": "2024-07-12T15:00:01Z"
-        }
-    ]
+  "transactions": [
+    {
+      "id": 1,
+      "description": "website development",
+      "type": "income",
+      "category": "freelance",
+      "price": 9099.07,
+      "createdAt": "2024-07-12T15:00:01Z"
+    },
+    {
+      "id": 2,
+      "description": "dinner",
+      "type": "outgoing",
+      "category": "food",
+      "price": 50.33,
+      "createdAt": "2024-07-11T11:59:01Z"
+    },
+    {
+      "id": 3,
+      "description": "salary",
+      "type": "income",
+      "category": "freelance",
+      "price": 1099.91,
+      "createdAt": "2024-07-12T15:00:01Z"
+    },
+    {
+      "description": "dsfsdfsdf",
+      "category": "dfsdf",
+      "price": 123,
+      "type": "income",
+      "createdAt": "2024-08-14T17:31:24.897Z",
+      "id": 4
+    },
+    {
+      "description": "sss",
+      "category": "asd",
+      "price": 123,
+      "type": "income",
+      "createdAt": "2024-08-14T17:32:14.907Z",
+      "id": 5
+    },
+    {
+      "description": "dsfdsf",
+      "category": "adsfdsf",
+      "price": 12222,
+      "type": "outgoing",
+      "createdAt": "2024-08-14T17:53:21.070Z",
+      "id": 6
+    },
+    {
+      "description": "aaaa",
+      "category": "1111",
+      "price": 111,
+      "type": "income",
+      "createdAt": "2024-08-14T17:53:54.813Z",
+      "id": 7
+    },
+    {
+      "description": "ddd",
+      "category": "ddd",
+      "price": 22,
+      "type": "outgoing",
+      "createdAt": "2024-08-14T17:54:16.571Z",
+      "id": 8
+    },
+    {
+      "description": "fff",
+      "category": "11",
+      "price": 222,
+      "type": "income",
+      "createdAt": "2024-08-14T17:58:50.107Z",
+      "id": 9
+    }
+  ]
 }
