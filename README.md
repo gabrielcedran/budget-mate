@@ -69,3 +69,12 @@ React allows developers to create their own hooks (which may use of other hooks)
 
 
 Custom hooks often help developers reduce components complexity by isolating complex logic into the hooks, and then simply utilising them in the components.
+
+
+### Forms on react
+
+To work with uncontrolled components and form validation react has a myriad of possibilities. For this project, the following will be used:
+
+- React hook form - for uncontrolled forms 
+- zod - for form validation and schema definition
+- @hookform/resolvers - to integrate react hook from and zod
