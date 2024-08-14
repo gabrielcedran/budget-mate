@@ -5,7 +5,7 @@
             "description": "website development",
             "type": "income",
             "category": "freelance",
-            "price": 9099,
+            "price": 9099.07,
             "createdAt": "2024-07-12T15:00:01Z"
         },
         {
@@ -15,6 +15,14 @@
             "category": "food",
             "price": 50.33,
             "createdAt": "2024-07-11T11:59:01Z"
+        },        
+        {
+            "id": 3,
+            "description": "salary",
+            "type": "income",
+            "category": "freelance",
+            "price": 1099.91,
+            "createdAt": "2024-07-12T15:00:01Z"
         }
     ]
 }
