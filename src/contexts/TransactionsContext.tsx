@@ -1,4 +1,5 @@
 import { createContext, PropsWithChildren, useEffect, useState } from "react";
+import { api } from "../lib/axios";
 
 export interface Transaction {
     id: number
@@ -22,14 +23,12 @@ export function TransactionsProvider({children}: PropsWithChildren) {
     
     async function fetchTransactions(query?: string) {
 
-        const url = new URL('http://localhost:3000/transactions')
-        
-        if (query) {
-            url.searchParams.append('q', query)
-        }
-        
-        const response = await fetch(url)
-        const data = await response.json()
+        const response = await api.get('/transactions', {
+            params: {
+                q: query
+            }
+        })
+        const data = response.data
         setTransactions([...data.map(transaction => ({...transaction, createdAt: new Date(transaction.createdAt)}))])
     }
 
