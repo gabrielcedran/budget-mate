@@ -63,4 +63,9 @@ Json Server is a powerful mock server mostly used by FE developers to mock apis.
 To execute the json server, run the command `npx json-server {config_file.json}`. The config file json has to be according to json-server documentation.
 
 
+### Custom hooks
 
+React allows developers to create their own hooks (which may use of other hooks). Custom hooks which have state will cause rerender should that state change.
+
+
+Custom hooks often help developers reduce components complexity by isolating complex logic into the hooks, and then simply utilising them in the components.
