@@ -161,3 +161,10 @@ Example:
 ```
 export const SeachForm = memo(SearchFormCompnent)
 ```
+
+
+#### useMemo
+
+Similarly to functions being recreated, variables are also recreated when components render, leading to the referencial side-effect in case those variables are passed down to other components.
+
+In order to use the same reference and avoid variabled being recreated, it's possible to use the `useMemo` hook, which also accepts an array of dependencies.
