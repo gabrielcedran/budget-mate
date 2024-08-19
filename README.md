@@ -119,3 +119,11 @@ There is a proposal of native API with the concept `selector` to enable this beh
 All that needs to be done is to use the `createContext` function from the lib instead of the native one and 
 the `useContextSelector` instead of `useContext`, providing the selector (which properties of this contexts needs to be observed).
 
+
+#### useCallback
+
+Functions defined within a component are recreated every time that component renders. It effectively creates a new function in memory.
+
+Due to referential equality, subcomponents that rely on that function will rerender due to properties change, even if effectively nothing changed within the new function.
+
+To avoid this, react provides the useCallback function. It takes as the first argument the function itself and the second an array of properties that should cause the function to be recreated (similarly to useEffect).
