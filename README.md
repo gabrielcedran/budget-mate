@@ -127,3 +127,37 @@ Functions defined within a component are recreated every time that component ren
 Due to referential equality, subcomponents that rely on that function will rerender due to properties change, even if effectively nothing changed within the new function.
 
 To avoid this, react provides the useCallback function. It takes as the first argument the function itself and the second an array of properties that should cause the function to be recreated (similarly to useEffect).
+
+
+#### memo
+
+Generally speaking, react is highly optimised for performance, and premature optimisations should be avoided.
+
+Bear in mind that components re-render in 3 situations:
+
+1. When the component's state changes (including hooks, contexts, reducers, etc)
+2. When props change
+3. When the parent component renders
+
+The renderisation flow is as follows:
+
+1. Generate a new virtual dom
+2. Compare the new virtual dom with the current one (reconciliation)
+3. Update the actual DOM: If there are changes, React updates the real DOM. This is the most performance-intensive part since applying changes to the screen can be costly.
+
+
+In general, light components that don't generate a lot of html should be good. When dealing with havier components (e.g generating a big html structure based on a list with many elements), it might be beneficial to help react to save time with the renderisation lifecycle above.
+
+`memo` is a function used to memoise components. It introduces the following steps before the renderisation lifecycle described above:
+
+1. Performs a shallow comparison on the component's Hooks and Props
+2. If anything changed, perform the other steps defined above
+
+This strategy is only beneficial when the shallow comparison is less expensive than the standard rendering flow, thereby avoiding unnecessary re-renders. 
+It can be particularly useful for components that receive the same props frequently and don't need to re-render unless those props change.
+
+Example:
+
+```
+export const SeachForm = memo(SearchFormCompnent)
+```
