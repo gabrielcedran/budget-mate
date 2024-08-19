@@ -71,6 +71,14 @@
       "type": "income",
       "createdAt": "2024-08-14T17:58:50.107Z",
       "id": 9
+    },
+    {
+      "description": "aa",
+      "category": "2",
+      "price": 1,
+      "type": "income",
+      "createdAt": "2024-08-19T12:41:18.570Z",
+      "id": 10
     }
   ]
 }

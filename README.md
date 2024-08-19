@@ -96,3 +96,26 @@ Careful with the new eslint 9.x as it does not support the traditional shareable
 Create a `eslint.config.mjs` with the expected content - see content in the file itself.
 
 To run the eslint: `npm eslint`. To fix all the issues `npm eslint --fix`
+
+
+
+### Performance
+
+#### Context selector
+
+When working with contexts, it's important to bear in mind that
+it is not possible to control which property changed in order
+to only render the components which depend on that property.
+In other words: all components that use a context will always render if the context renders, even if they are not using
+the property that caused the context rerender.
+
+Example: suppose a context that contains 2 properties. Component A uses both properties and Component B only one.
+If this context rerenders because of the property that B doesn't use, it will trigger a render of component B regardless.
+
+There is a proposal of native API with the concept `selector` to enable this behaviour. In the interim there is a lib to address this issue called `use-context-selector`.
+
+`npm i use-context-selector scheduler`
+
+All that needs to be done is to use the `createContext` function from the lib instead of the native one and 
+the `useContextSelector` instead of `useContext`, providing the selector (which properties of this contexts needs to be observed).
+
